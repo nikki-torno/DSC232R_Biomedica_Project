@@ -1,7 +1,6 @@
-Welcome to our BIOMEDICA Database group Project!
-The source data used in this project can be downloaded at this link: https://huggingface.co/BIOMEDICA and the project exclusively uses the data from the non-commercial license.
+Welcome to our BIOMEDICA Database group Project! The source data used in this project can be downloaded at this link: https://huggingface.co/BIOMEDICA and the project exclusively uses the data from the non-commercial license.
 
-The most up-to-date code can be found in the Milestone_3_v2.ipynb file. This file can also be accessed in the shared SDSC resource by following /expanse/lustre/projects/uci150/ntorno/group_project. The group_project remote directory already contains downloaded raw data, which has been unpacked and written to parquet files. These parquet files are also readily available in the remote directory. Please note that the RAM requirements to run this project are not trivial, especially if you desire to run any of the raw data processing and writing code. It is recommended that you establish your SDSC Spark session with the following configuration:
+The most up-to-date code can be found in the Milestone_3_v3.ipynb file. This file can also be accessed in the shared SDSC resource by following /expanse/lustre/projects/uci150/ntorno/group_project. The group_project remote directory already contains downloaded raw data, which has been unpacked and written to parquet files. These parquet files are also readily available in the remote directory. Please note that the RAM requirements to run this project are not trivial, especially if you desire to run any of the raw data processing and writing code. It is recommended that you establish your SDSC Spark session with the following configuration:
 
 Account: TG-CIS240277
 Partition: shared
