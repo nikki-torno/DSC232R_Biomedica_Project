@@ -45,11 +45,13 @@ The model’s architecture starts with two convolution blocks: the Conv2D @ 3x3+
 ![Figure 3 - Model Summary Table](images/model_sum.png)
 
 ## **Results**
-The model achieved a training accuracy of 96.6% by the final epoch and a testing accuracy of 81%, with a weighted average precision of 81%, recall of 81%, and f1-score of 81%. The classification report also revealed a range of performance on different classes in the dataset, with precision scores as low as 71% and as high as 100% across various dataset categories. Moreover, the model performance was visualized by performing t-SNE on model predictions, then plotting the t-SNE of CNN embeddings. 
+The model achieved a training accuracy of 96.6% by the final epoch and a testing accuracy of 81%. 
 ![Figure 5 - Model Accuracy Score](images/accuracy_1.png)
 
+The classification report indicated a weighted average precision of 81%, recall of 81%, and f1-score of 81%; the classification report also revealed a range of performance on different classes in the dataset, with precision scores as low as 71% and as high as 100% across various dataset categories. 
 ![Figure 6 - Model Classification Report](images/accuracy_2.png)
 
+Further, the model performance was visualized by performing dimensionality reduction via t-SNE on model predictions, then plotting the t-SNE of the embeddings. 
 ![Figure 7 - t-SNE of Model Embeddings](images/model_tsne.png)
 
 ## **Discussion**
@@ -66,4 +68,5 @@ Statement of contributions:
 - Osvaldo Rivera: Group contributor. Contributed to code review and writeup.
 - Kenny Kang: Group contributor. Contributed to code review and writeup.
 - Whitney deRoche: Group contributor. Contributed to code review and writeup.
-	Overall, the team worked together to complete and review all project requirements. Through different but equally important roles, the team collaborated throughout the entire course of the quarter by actively participating in group discussions, reviewing datasets and code files, and providing insightful feedback on written components of the project as well. 
+
+Overall, the team worked together to complete and review all project requirements. Through different but equally important roles, the team collaborated throughout the entire course of the quarter by actively participating in group discussions, reviewing datasets and code files, and providing insightful feedback on written components of the project as well. 
