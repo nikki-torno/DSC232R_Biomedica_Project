@@ -6,7 +6,7 @@ This project was developed around the BIOMEDICA huggingface database, particular
 The model developed is intended to provide insights into not only how CNN model training behaves with highly dimensional academic figure image data, but, more importantly, to allow investigation of underlying patterns in the styles and quality of figures accepted and published by various academic journals. This is of interest to the broader field because a competent medical image classification model can reduce the workload on researchers and provide a more cost efficient solution to understanding trends and potential oversights in the medical research literature. Identifying which fields make extensive use of specific medical imaging, data visualization, and dimensionality techniques empowers researchers to develop insights into opportunities for improvement in the rigor and fidelity of published research; the broader medical community therefore benefits as more research is poured into optimizing CNNs for literature review-focused models.
 
 ## **Methods - Environment Setup**
-In order to access the SDSC Spark remote resources, this project can be accessed by logging into the SDSC Portal, then creating a new Jupyter Lab session with the following configuration specifications: 
+In order to access the SDSC Spark remote resources, this project can be accessed by logging into the SDSC Portal, then creating a new Jupyter Lab session. The end user is free to select their desired resource allocation, but the project team recommends the following configuration specifications: 
 - Account: TG-CIS240277 
 - Partition: shared 
 - Time limit (min): 180 
@@ -17,13 +17,15 @@ In order to access the SDSC Spark remote resources, this project can be accessed
 - Working Directory: home 
 - Type: JupyterLab
   
-Once connected to the remote server, this project can be accessed by following the path /expanse/lustre/projects/uci150/ntorno/group_project. Accessing any .ipynb file will allow you to view and run the included environment setup code, which will specify the Spark session based on the above Jupyter Lab resource specifications. Please note that, if you choose to make any changes to the Jupyter Lab resources from the recommendations above, you must change the environment setup code to match the specifications of your session. Otherwise, the Spark session should be initiated as written in the .ipynb file:
+Once connected to the remote server, this project can be accessed by following the path /expanse/lustre/projects/uci150/ntorno/group_project. Accessing any .ipynb file in this project will provide the end user with recommended Spark session configuration code, located at the very beginning under Step 0: Environment Setup. Each Step 0 section of the project Jupyter Notebooks initiates the Spark session based on the above Jupyter Lab resource specifications. Please note that, if you choose to make any changes to the Jupyter Lab resources from the recommendations above, you should ensure that your environment setup code matches the specifications of your unique session. Otherwise, the Spark session may be initiated as follows:
 
+```
 sc = SparkSession.builder 
-> .config("spark.driver.memory", "10g") 
-> .config("spark.executor.memory", "6g") 
-> .config('spark.executor.instances', 19) 
-> .getOrCreate()
+.config("spark.driver.memory", "10g") 
+.config("spark.executor.memory", "6g") 
+.config('spark.executor.instances', 19) 
+.getOrCreate()
+```
 
 ## **Methods - Data Exploration**
 The data exploration code is contained in the Milestone 2 notebooks, with the most complete work in the file milestone2_v2.ipynb, which is accessible in the SDSC server as well as on GitHub. Step 1 includes the full process of uploading the raw data from the BIOMEDICA unprocessed .tar files into the remote server, first by reading in the files, then creating Spark dataframes for each file type included in the unpacked dataset: .txt, .json, and .jpg. This section also includes some initial data exploration, such as finding the number of unique entries and schema for each file type in the dataset. Finally, the image, text, and structured data are all written to their own parquet files in the remote server. This process allows for the data to be read in and used more efficiently in subsequent sessions, thus avoiding waste of time and resources. Because the parquet data is already available in the remote directory, please note that it is recommended to simply read Step 1 but skip from running Step 0 to Step 2, as this will be a much more efficient way to access the dataset.
