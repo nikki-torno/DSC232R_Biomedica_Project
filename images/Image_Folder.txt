@@ -1,0 +1,1 @@
+This folder contains all images in the README. Further visualizations of the project code can be found in the included Jupyter notebooks.
